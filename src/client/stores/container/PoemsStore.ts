@@ -2,7 +2,7 @@ import { action, observable } from 'mobx';
 import client from '../../graphql/client';
 import gql from 'graphql-tag';
 
-interface IPoem {
+export interface IPoem {
     author: string;
     title: string;
     linecount: string;

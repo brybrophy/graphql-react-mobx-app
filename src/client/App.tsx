@@ -18,7 +18,11 @@ export default class App extends React.Component {
             <div id="app">
                 <Switch>
                     <Route exact path="/" component={PoemsPage} />
-                    <Route exact path="/:title" component={PoemDetailPage} />
+                    <Route
+                        exact
+                        path="/poems/:title"
+                        component={PoemDetailPage}
+                    />
                     <Route exact path="/not-found" component={NotFoundPage} />
                     <Route component={NotFoundPage} />
                 </Switch>

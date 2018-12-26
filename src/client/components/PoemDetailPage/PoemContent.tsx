@@ -1,10 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { IPoemDetail } from '../../stores/container/PoemDetailStore';
 
 interface IProps {
     errorMessage: string;
     isLoading: Boolean;
-    poem: any;
+    poem: IPoemDetail;
 }
 
 const PoemContent = ({ errorMessage, isLoading, poem }: IProps) => {

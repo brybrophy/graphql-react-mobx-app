@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { IPoem } from '../../stores/container/PoemsStore';
 
 interface IProps {
     errorMessage: string;
     isLoading: Boolean;
-    poems: any[];
+    poems: IPoem[];
 }
 
 const PoemsList = ({ errorMessage, isLoading, poems }: IProps) => {
@@ -20,7 +21,7 @@ const PoemsList = ({ errorMessage, isLoading, poems }: IProps) => {
         <section className="poems-list">
             {poems.map((poem, i) => {
                 return (
-                    <Link to={poem.title} key={poem.title}>
+                    <Link to={`poems/${poem.title}`} key={poem.title}>
                         <div className={`list-card card-${i + 1}`}>
                             <div className="row">
                                 <h5>author:</h5>

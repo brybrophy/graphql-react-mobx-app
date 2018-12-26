@@ -15,7 +15,7 @@ export default class NotFoundPage extends React.Component<IProps, {}> {
 
     render() {
         return (
-            <main className="not-found-page">
+            <main className="not-found-page page">
                 <h1>Page Not Found</h1>
             </main>
         );
