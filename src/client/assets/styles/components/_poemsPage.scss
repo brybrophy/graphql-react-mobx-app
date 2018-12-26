@@ -1,8 +1,4 @@
 .poems-page {
-    margin: 0 auto;
-    padding: 2rem 1rem;
-    width: 70vw;
-
     .page-title {
         margin-bottom: 5rem;
     }
@@ -31,6 +27,7 @@
             animation: slide-up 400ms ease-out forwards;
             background-color: $outreach-purple;
             color: #fff;
+            cursor: pointer;
             opacity: 0;
             transform: translateY(50%);
             margin-bottom: 2rem;
@@ -40,6 +37,10 @@
                 &.card-#{$i} {
                     animation-delay: #{$i * 100}ms;
                 }
+            }
+
+            &:active {
+                @include depth(1);
             }
 
             .row {
@@ -52,9 +53,5 @@
                 }
             }
         }
-    }
-
-    @include for-tablet-portrait-up {
-        padding: 10rem;
     }
 }

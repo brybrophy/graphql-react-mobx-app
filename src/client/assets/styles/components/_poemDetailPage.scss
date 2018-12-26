@@ -1,0 +1,19 @@
+.poem-detail-page {
+    .page-title {
+        margin-bottom: 0.5rem;
+    }
+
+    .by-line {
+        font-weight: 500;
+        margin-left: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .lines {
+        margin-left: 1rem;
+
+        p {
+            @include type-setting(2);
+        }
+    }
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 interface IProps {
     errorMessage: string;
@@ -19,20 +20,22 @@ const PoemsList = ({ errorMessage, isLoading, poems }: IProps) => {
         <section className="poems-list">
             {poems.map((poem, i) => {
                 return (
-                    <div className={`list-card card-${i + 1}`} key={poem.title}>
-                        <div className="row">
-                            <h5>author:</h5>
-                            <p>{poem.author}</p>
+                    <Link to={poem.title} key={poem.title}>
+                        <div className={`list-card card-${i + 1}`}>
+                            <div className="row">
+                                <h5>author:</h5>
+                                <p>{poem.author}</p>
+                            </div>
+                            <div className="row">
+                                <h5>title:</h5>
+                                <p>{poem.title}</p>
+                            </div>
+                            <div className="row">
+                                <h5>Line Count:</h5>
+                                <p>{poem.linecount}</p>
+                            </div>
                         </div>
-                        <div className="row">
-                            <h5>title:</h5>
-                            <p>{poem.title}</p>
-                        </div>
-                        <div className="row">
-                            <h5>Line Count:</h5>
-                            <p>{poem.linecount}</p>
-                        </div>
-                    </div>
+                    </Link>
                 );
             })}
         </section>

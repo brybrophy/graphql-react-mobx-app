@@ -41,7 +41,7 @@ export default class PoemsPage extends React.Component<IProps, {}> {
         const { author, errorMessage, isLoading, poems } = this._store;
 
         return (
-            <main className="poems-page">
+            <main className="poems-page page">
                 <h1 className="page-title">Search Poems By Author</h1>
                 <PoemsSearch
                     onChange={this.handleSearchInputChange}

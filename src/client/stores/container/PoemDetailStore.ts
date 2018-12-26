@@ -5,22 +5,17 @@ import gql from 'graphql-tag';
 interface IPoem {
     author: string;
     title: string;
+    lines: string[];
     linecount: string;
 }
 
-export default class PoemsStore {
-    @observable public author: string = '';
+export default class PoemDetailStore {
+    @observable public poem: IPoem = { title: '', author: '', lines: [] };
     @observable public errorMessage: string = '';
     @observable public isLoading: boolean = false;
-    @observable public poems: IPoem[] = [];
 
     @action
-    async getPoemsByAuthor(author: string): Promise<void> {
-        if (!author) {
-            this.errorMessage = 'Author Cannot Be Blank.';
-            return;
-        }
-
+    async getPoemByTitle(title: string): Promise<void> {
         this.isLoading = true;
         this.errorMessage = '';
 
@@ -28,29 +23,24 @@ export default class PoemsStore {
             const res: any = await client.query({
                 query: gql`
                     {
-                        poemsByAuthor(author: "${author}") {
+                        poemByTitle(title: "${title}") {
                             author
                             title
-                            linecount
+                            lines
                         }
                     }
                 `
             });
 
-            if (res.data && res.data.poemsByAuthor) {
-                this.poems = res.data.poemsByAuthor;
+            if (res.data && res.data.poemByTitle) {
+                this.poem = res.data.poemByTitle;
             }
         } catch (err) {
-            this.errorMessage = `No Poems By Author ${author}.`;
+            this.errorMessage = `Error Loading Poem ${title}.`;
         }
 
         this.isLoading = false;
     }
-
-    @action
-    setAuthor(nextAuthor: string): void {
-        this.author = nextAuthor;
-    }
 }
 
-export interface IPoemsStore extends PoemsStore {}
+export interface IPoemDetailStore extends PoemDetailStore {}

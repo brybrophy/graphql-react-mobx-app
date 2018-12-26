@@ -1,11 +1,9 @@
 import PoemsStore from './container/PoemsStore';
+import PoemDetailStore from './container/PoemDetailStore';
 
 export default class Stores {
-    private _poems = new PoemsStore();
-
-    get poems() {
-        return this._poems;
-    }
+    public poems = new PoemsStore();
+    public poemDetail = new PoemDetailStore();
 }
 
 export interface IStores extends Stores {}

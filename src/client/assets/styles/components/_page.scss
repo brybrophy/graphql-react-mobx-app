@@ -1,0 +1,9 @@
+.page {
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    width: 70vw;
+
+    @include for-tablet-portrait-up {
+        padding: 10rem;
+    }
+}

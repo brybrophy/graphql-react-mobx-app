@@ -4,7 +4,9 @@ import importedComponent from 'react-imported-component';
 
 // ---- Dynamic Imports for Code splitting ---- //
 const PoemsPage = importedComponent(() => import('./components/PoemsPage'));
-
+const PoemDetailPage = importedComponent(() =>
+    import('./components/PoemDetailPage')
+);
 const NotFoundPage = importedComponent(() =>
     import('./components/NotFoundPage')
 );
@@ -16,6 +18,7 @@ export default class App extends React.Component {
             <div id="app">
                 <Switch>
                     <Route exact path="/" component={PoemsPage} />
+                    <Route exact path="/:title" component={PoemDetailPage} />
                     <Route exact path="/not-found" component={NotFoundPage} />
                     <Route component={NotFoundPage} />
                 </Switch>
