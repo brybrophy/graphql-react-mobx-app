@@ -1,6 +1,7 @@
 button {
     @include depth(1);
     @include type-setting(-1);
+    background-color: #fff;
     border-radius: 6px;
     border: 1px solid $outreach-purple;
     color: $outreach-purple;
@@ -14,5 +15,10 @@ button {
 
     &:active {
         @include depth(0);
+    }
+
+    &.sm {
+        @include type-setting(-2);
+        padding: 1rem 0;
     }
 }

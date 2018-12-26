@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import { scrollTopOnPush } from '../../../common/utils/navigationUtils';
 import { IStores } from '../../stores';
 import { IPoemDetailStore } from '../../stores/container/PoemDetailStore';
+import BackLink from './BackLink';
 import PoemContent from './PoemContent';
 
 interface IProps extends RouteComponentProps<any> {
@@ -32,6 +33,7 @@ export default class PoemDetailPage extends React.Component<IProps, {}> {
 
         return (
             <main className="poem-detail-page page">
+                <BackLink path="/" />
                 <PoemContent
                     errorMessage={errorMessage}
                     isLoading={isLoading}

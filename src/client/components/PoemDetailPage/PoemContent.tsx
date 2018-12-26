@@ -23,8 +23,8 @@ const PoemContent = ({ errorMessage, isLoading, poem }: IProps) => {
                 {poem.author ? `By ${poem.author}` : ''}
             </h4>
             <div className="lines">
-                {poem.lines.map(line => {
-                    return <p key={line}>{line}</p>;
+                {poem.lines.map((line, i) => {
+                    return <p key={`${line}-${i}`}>{line}</p>;
                 })}
             </div>
         </section>
