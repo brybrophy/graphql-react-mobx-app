@@ -1,12 +1,13 @@
 .input-group {
     position: relative;
+    margin-bottom: 2rem;
 
     input,
     textarea {
         font: {
             weight: 300;
         }
-        @include type-setting(0);
+        @include type-setting(2);
         color: $material-input-text;
         background-color: transparent;
         border: none;
@@ -23,7 +24,7 @@
     /* LABEL ======================================= */
 
     label {
-        @include type-setting(-2);
+        @include type-setting(1);
         color: $material-input-text;
         position: absolute;
         pointer-events: none;

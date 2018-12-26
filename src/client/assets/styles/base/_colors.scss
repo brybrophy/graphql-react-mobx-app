@@ -1,4 +1,7 @@
+$outreach-blue: rgba(36, 204, 253, 1);
+$outreach-purple: rgba(89, 81, 255, 1);
 $text-color-1: rgba(17, 17, 17, 1);
 $material-input-text: rgba(17, 17, 17, 1);
-$material-input-success: rgb(131, 182, 146);
-$material-input-error: rgb(214, 143, 143);
+$material-input-success: $outreach-purple;
+$material-input-error: rgba(214, 143, 143, 1);
+$light-grey: rgba(242, 244, 244, 1);

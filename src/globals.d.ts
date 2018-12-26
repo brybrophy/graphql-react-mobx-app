@@ -12,3 +12,9 @@ declare namespace NodeJS {
         document: any;
     }
 }
+
+declare interface NodeModule {
+    hot: {
+        accept(path?: () => void, callback?: () => void): void;
+    };
+}
