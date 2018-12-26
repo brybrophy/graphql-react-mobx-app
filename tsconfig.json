@@ -12,5 +12,5 @@
         "lib": ["esnext", "dom"],
         "allowSyntheticDefaultImports": true
     },
-    "exclude": ["node_modules", "test", "dist"]
+    "exclude": ["node_modules", "test", "dist", ".cache"]
 }

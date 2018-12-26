@@ -1,3 +1,10 @@
 'use strict';
 
-export default [];
+interface IRedirect {
+    from: string;
+    to: string;
+}
+
+const redirects: IRedirect[] = [];
+
+export default redirects;
