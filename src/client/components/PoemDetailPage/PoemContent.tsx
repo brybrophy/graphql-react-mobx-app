@@ -1,5 +1,5 @@
 import React from 'react';
-import { IPoemDetail } from '../../stores/container/PoemDetailStore';
+import { IPoemDetail } from './PoemDetailStateContainer';
 
 interface IProps {
     errorMessage: string;
@@ -23,7 +23,7 @@ const PoemContent = ({ errorMessage, isLoading, poem }: IProps) => {
                 {poem.author ? `By ${poem.author}` : ''}
             </h4>
             <div className="lines">
-                {poem.lines.map((line, i) => {
+                {poem.lines.map((line: string, i) => {
                     return <p key={`${line}-${i}`}>{line}</p>;
                 })}
             </div>
